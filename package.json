@@ -1,0 +1,14 @@
+{
+  "name": "emacs-mode",
+  "main": "./lib/emacs",
+  "version": "0.0.29",
+  "description": "Enjoy a mouse-free Emacs experience on a modern editor.",
+  "repository": "https://github.com/fuqcool/atom-emacs-mode.git",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "underscore-plus": "^1.2.1"
+  }
+}
