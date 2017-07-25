@@ -1,80 +1,101 @@
-KillRingModel = require './kill-ring-model'
-{Range} = require 'atom'
-
 module.exports =
-  model: new KillRingModel,
+class KillRing
+  constructor: ->
+    @currentIndex = -1
+    @entries = []
+    @limit = 500
+    @lastSystemClip = undefined
+    @global = true
 
-  enableKillRing: (editorView) ->
-    return if editorView.hasClass 'kill-ring'
+  fork: ->
+    fork = new KillRing
+    fork.setEntries(@entries)
+    fork.currentIndex = @currentIndex
+    fork.lastSystemClip = @lastSystemClip
+    fork.global = false
+    fork
 
-    editorView.command 'emacs:yank', => @yank editorView
-    editorView.command 'emacs:yank-pop', => @yankPop editorView
-    editorView.command 'emacs:kill-region', => @killRegion editorView
-    editorView.command 'emacs:kill-ring-save', =>
-      @killRingSave editorView
-      editorView.trigger 'emacs:clear-selection'
+  isEmpty: ->
+    @entries.length == 0
 
-    editorView.command 'emacs:cancel-yank', =>
-      @cancelYank()
+  reset: ->
+    @entries = []
 
-    editorView.on 'mouseup', => @killRingSave editorView
-    editorView.on 'core:cancel', ->
-      editorView.trigger 'emacs:cancel-yank'
+  getEntries: ->
+    @entries.slice()
 
-    editorView.addClass 'kill-ring'
+  setEntries: (entries) ->
+    @entries = entries.slice()
+    @currentIndex = @entries.length - 1
+    this
 
+  _pushSystemClipboard: (text) ->
+    if global and atom.config.get("emacs-hjkl.killToClipboard")
+      atom.clipboard.write(text)
+      @lastSystemClip = text
 
-  yank: (editorView) ->
-    @_saveClipboard()
+  _pullSystemClipboard: () ->
+    if atom.config.get("emacs-hjkl.yankFromClipboard")
+      text = atom.clipboard.read()
+      if (@lastSystemClip != text)
+        @lastSystemClip = text
+        @_doPush(text)
 
-    @_excludeCursor editorView, =>
-      editor = editorView.getEditor()
-      @yankBeg = editor.getCursorBufferPosition()
-      editor.insertText @model.yankText()
+  _doPush: (text) ->
+    @entries.push(text)
+    if @entries.length > @limit
+      @entries.shift()
+    @currentIndex = @entries.length - 1
 
-  yankPop: (editorView) ->
-    @_excludeCursor editorView, =>
-      if @model.yanking
-        editor = editorView.getEditor()
-        text = @model.yankPopText()
-        currentPos = editor.getCursorBufferPosition()
-        editor.setTextInBufferRange(new Range(@yankBeg, currentPos), text)
+  push: (text) ->
+    @_pullSystemClipboard()
+    @_pushSystemClipboard(text)
+    @_doPush(text)
 
-  killRingSave: (editorView) ->
-    @_saveClipboard()
+  append: (text) ->
+    @_pullSystemClipboard()
+    if @entries.length == 0
+      @push(text)
+    else
+      index = @entries.length - 1
+      newText = @entries[index] + text
+      @_pushSystemClipboard(newText)
+      @entries[index] = newText
+      @currentIndex = @entries.length - 1
 
-    editor = editorView.getEditor()
-    editor.copySelectedText()
-    text = atom.clipboard.read()
+  prepend: (text) ->
+    @_pullSystemClipboard()
+    if @entries.length == 0
+      @push(text)
+    else
+      index = @entries.length - 1
+      newText = "#{text}#{@entries[index]}"
+      @_pushSystemClipboard(newText)
+      @entries[index] = newText
+      @currentIndex = @entries.length - 1
 
-    @model.put text
-    editorView.trigger 'emacs:clear-mark'
+  replace: (text) ->
+    @_pullSystemClipboard()
+    if @entries.length == 0
+      @push(text)
+    else
+      @_pushSystemClipboard(text)
+      index = @entries.length - 1
+      @entries[index] = text
+      @currentIndex = @entries.length - 1
 
-  killRegion: (editorView) ->
-    @_saveClipboard()
+  getCurrentEntry: ->
+    @_pullSystemClipboard()
+    if @entries.length == 0
+      return null
+    else
+      @entries[@currentIndex]
 
-    editor = editorView.getEditor()
-    editor.cutSelectedText()
-    text = atom.clipboard.read()
+  rotate: (n) ->
+    @_pullSystemClipboard()
+    return null if @entries.length == 0
+    @currentIndex = (@currentIndex + n) % @entries.length
+    @currentIndex += @entries.length if @currentIndex < 0
+    return @entries[@currentIndex]
 
-    @model.put text
-
-  cancelYank: ->
-    @model.cancel()
-
-  # need a better way to disable cursor while callback is executing
-  _excludeCursor: (editorView, callback) ->
-    editorView.off 'cursor:moved'
-
-    callback.call @
-
-    setTimeout =>
-      editorView.on 'cursor:moved', => @cancelYank()
-
-  _saveClipboard: ->
-    text = atom.clipboard.read()
-
-    return if text is 'initial clipboard content'
-
-    if text isnt @model.yankText()
-      @model.put text
+  @global = new KillRing

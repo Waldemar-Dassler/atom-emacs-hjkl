@@ -1,102 +1,115 @@
-## Deprecated
+## Atomic Emacs
 
-This package is no longer under maintain. **Because I realized that there is nothing in this world can replace Emacs. Happy hacking!**
+Emacs with hjkl move forward keybindings for Atom.
 
-Atom emacs-HJKL
-======
+## Commands
 
-This is an Emacs extension for Atom.
+### Navigation
 
-## Install
+    'ctrl-b': 'emacs-hjkl:backward-char'
+    'left': 'emacs-hjkl:backward-char'
+    'ctrl-f': 'emacs-hjkl:forward-char'
+    'right': 'emacs-hjkl:forward-char'
+    'alt-b': 'emacs-hjkl:backward-word'
+    'alt-left': 'emacs-hjkl:backward-word'
+    'alt-f': 'emacs-hjkl:forward-word'
+    'alt-right': 'emacs-hjkl:forward-word'
+    'ctrl-alt-b': 'emacs-hjkl:backward-sexp'
+    'ctrl-alt-f': 'emacs-hjkl:forward-sexp'
+    'alt-{': 'emacs-hjkl:backward-paragraph'
+    'alt-}': 'emacs-hjkl:forward-paragraph'
+    'alt-m': 'emacs-hjkl:back-to-indentation'
+    'ctrl-a': 'editor:move-to-beginning-of-line'
+    'ctrl-s': 'find-and-replace:show'
+    'ctrl-r': 'find-and-replace:show'
+    'alt-<': 'core:move-to-top'
+    'alt->': 'core:move-to-bottom'
 
-You can install it from `Atom -> Preferences -> Settings -> Packages`. To enable emacs-hjkl automatically on Atom starts, put following code to your init script:
+### Killing & Yanking
 
-```coffeescript
-atom.packages.activatePackage 'emacs-hjkl'
-```
+    'alt-backspace': 'emacs-hjkl:backward-kill-word'
+    'alt-delete': 'emacs-hjkl:backward-kill-word'
+    'alt-d': 'emacs-hjkl:kill-word'
+    'ctrl-k': 'emacs-hjkl:kill-line'
+    'ctrl-w': 'emacs-hjkl:kill-region'
+    'alt-w': 'emacs-hjkl:copy-region-as-kill'
+    'ctrl-alt-w': 'emacs-hjkl:append-next-kill'
+    'ctrl-y': 'emacs-hjkl:yank'
+    'alt-y': 'emacs-hjkl:yank-pop'
+    'alt-shift-y': 'emacs-hjkl:yank-shift'
 
-## Features
+Note that Atomic Emacs does not (yet) support prefix arguments, so to rotate the
+kill ring forward, use `yank-shift` (equivalent to `yank-pop` in Emacs with a
+prefix argument of -1).
 
-- Regular Emacs key binding(see below)
-- Kill ring
-- Buffer finder (C-x b), file finder(C-x C-f)
-- Copy text by mouse selection
-- Zen mode(hide tabs, sidebar)
-- Marker
-- Emacs-style cursor
+### Editing
 
-## Keymap
+    'alt-\\': 'emacs-hjkl:delete-horizontal-space'
+    'alt-^': 'emacs-hjkl:delete-indentation'
+    'ctrl-o': 'emacs-hjkl:open-line'
+    'alt-space': 'emacs-hjkl:just-one-space'
+    'ctrl-t': 'emacs-hjkl:transpose-chars'
+    'alt-t': 'emacs-hjkl:transpose-words'
+    'ctrl-x ctrl-t': 'emacs-hjkl:transpose-lines'
+    'ctrl-x ctrl-l': 'emacs-hjkl:downcase-word-or-region'
+    'alt-l': 'emacs-hjkl:downcase-word-or-region'
+    'ctrl-x ctrl-u': 'emacs-hjkl:upcase-word-or-region'
+    'alt-u': 'emacs-hjkl:upcase-word-or-region'
+    'alt-c': 'emacs-hjkl:capitalize-word-or-region'
+    'ctrl-j': 'editor:newline'
+    'ctrl-/': 'core:undo'
+    'ctrl-_': 'core:undo'
+    'alt-/': 'autocomplete-plus:activate'
+    'alt-q': 'autoflow:reflow-selection'
+    'alt-;': 'editor:toggle-line-comments'
 
-```coffeescript
-'.editor':
-  'ctrl-a': 'editor:move-to-first-character-of-line'
-  'ctrl-e': 'editor:move-to-end-of-line'
-  'ctrl-backspace': 'editor:backspace-to-beginning-of-word'
-  'ctrl-j': 'editor:newline'
-  'ctrl-o': 'emacs:open-line'
-  'alt-f': 'emacs:forward-word'
-  'alt-b': 'emacs:backward-word'
-  'ctrl-l': 'emacs:recenter'
-  'alt-/': 'autocomplete:toggle'
-  'ctrl-s': 'find-and-replace:show'
-  'ctrl-@': 'emacs:set-mark'
-  'alt-;': 'editor:toggle-line-comments'
-  'alt-g g': 'go-to-line:toggle'
+### Marking & Selecting
 
-'.editor.emacs-marking':
-  'right':'core:select-right'
-  'ctrl-f':'core:select-right'
-  'left':'core:select-left'
-  'ctrl-b':'core:select-left'
-  'up':'core:select-up'
-  'ctrl-p':'core:select-up'
-  'down':'core:select-down'
-  'ctrl-n':'core:select-down'
+    'ctrl-space': 'emacs-hjkl:set-mark'
+    'ctrl-alt-space': 'emacs-hjkl:mark-sexp'
+    'ctrl-x h': 'emacs-hjkl:mark-whole-buffer'
+    'ctrl-x ctrl-x': 'emacs-hjkl:exchange-point-and-mark'
 
-'div.editor':
-  'ctrl-space': 'emacs:set-mark'
+### UI
 
-'.workspace':
-  # cursor
-  'ctrl-p': 'core:move-up'
-  'ctrl-n': 'core:move-down'
-  'ctrl-b': 'core:move-left'
-  'ctrl-f': 'core:move-right'
-  'alt-v': 'core:page-up'
-  'ctrl-v': 'core:page-down'
-  'alt->': 'core:move-to-bottom'
-  'alt-<': 'core:move-to-top'
+    'ctrl-g': 'core:cancel'
+    'ctrl-x ctrl-s': 'core:save'
+    'ctrl-x ctrl-w': 'core:save-as'
+    'alt-x': 'command-palette:toggle'
+    'alt-.': 'symbols-view:toggle-file-symbols'
+    'ctrl-x ctrl-f': 'fuzzy-finder:toggle-file-finder'
+    'ctrl-x b': 'fuzzy-finder:toggle-buffer-finder'
+    'ctrl-x k': 'core:close'
+    'ctrl-x 0': 'pane:close'
+    'ctrl-x 1': 'emacs-hjkl:close-other-panes'
+    'ctrl-x 2': 'pane:split-down'
+    'ctrl-x 3': 'pane:split-right'
+    'ctrl-x o': 'window:focus-next-pane'
 
-  # text manipulation
-  'ctrl-w': 'emacs:kill-region'
-  'ctrl-y': 'emacs:yank'
-  'alt-y': 'emacs:yank-pop'
-  'alt-w': 'emacs:kill-ring-save'
-  'ctrl-/': 'core:undo'
-  'ctrl-x ctrl-s': 'core:save'
+### Something missing?
 
-  # selection
-  'ctrl-x h': 'core:select-all'
+Feel free to suggest features on the Github issue tracker, or better yet, send a
+pull request!
 
-  # buffer
-  'ctrl-g': 'core:cancel'
-  'ctrl-x ctrl-c': 'window:close'
-  'ctrl-x k': 'core:close'
-  'ctrl-x b': 'emacs:switch-buffer'
-  'ctrl-x ctrl-f': 'emacs:find-file'
-```
+## Windows Note
 
-## Configuration
-Below are the default configurations:
+Some common Emacs keystrokes conflict with the default key bindings on Atom for
+Windows in unexpected ways. For example, `ctrl-k` (kill-line on emacs) is a
+prefix key for a set of pane management commands in Atom for Windows. The result
+is that after pressing `ctrl-k`, Atom will wait for 2 seconds to determine if it
+should treat this as a full command, or the beginning of another command, making
+`kill-line` feel "slow".
 
-```coffeescript
-'emacs-hjkl':
-  'hideTabs': false              # hide tabs
-  'hideSidebar': false           # hide tree view
-  'useEmacsCursor': true         # use emacs style(fat) cursor
-  'useFuzzyBufferFinder': false  # use default buffer finder
-  'useFuzzyFileFinder': false    # use default file finder
-```
+You can of course disable this by disabling the all built-in key bindings that
+start with `ctrl-k` in your `keymaps.config` file. You can also do this a little
+easier with the [disable-keybindings][disable-keybindings] package.
 
-## Contribution
-Pull requests are very welcomed. The only requirement before sending a pull request is to pass the test cases and test your own code.
+[disable-keybindings]: https://atom.io/packages/disable-keybindings
+
+## Contributing
+
+* [Bug reports](https://github.com/avendael/emacs-hjkl/issues)
+* [Source](https://github.com/avendael/emacs-hjkl)
+* Patches: Fork on Github, send pull request.
+ * Include tests where practical.
+ * Leave the version alone, or bump it in a separate commit.
