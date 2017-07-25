@@ -6,7 +6,7 @@ Emacs with hjkl move forward keybindings for Atom.
 
 ### Navigation
 
-    'ctrl-b': 'emacs-hjkl:backward-char'
+    'alt-h': 'emacs-hjkl:backward-char'
     'left': 'emacs-hjkl:backward-char'
     'ctrl-f': 'emacs-hjkl:forward-char'
     'right': 'emacs-hjkl:forward-char'
