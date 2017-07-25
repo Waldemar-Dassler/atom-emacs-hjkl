@@ -8,11 +8,11 @@ describe 'config', ->
   useFuzzyBufferFinder = jasmine.createSpy 'useFuzzyBufferFinder'
 
   beforeEach ->
-    atom.config.set 'emacs-mode.hideTabs', undefined
-    atom.config.set 'emacs-mode.hideSidebar', undefined
-    atom.config.set 'emacs-mode.useEmacsCursor', undefined
-    atom.config.set 'emacs-mode.useFuzzyFileFinder', undefined
-    atom.config.set 'emacs-mode.useFuzzyBufferFinder', undefined
+    atom.config.set 'emacs-hjkl.hideTabs', undefined
+    atom.config.set 'emacs-hjkl.hideSidebar', undefined
+    atom.config.set 'emacs-hjkl.useEmacsCursor', undefined
+    atom.config.set 'emacs-hjkl.useFuzzyFileFinder', undefined
+    atom.config.set 'emacs-hjkl.useFuzzyBufferFinder', undefined
 
     atom.workspaceView = new WorkspaceView
     atom.workspaceView.on 'emacs:hide-tabs', hideTabs
@@ -24,11 +24,11 @@ describe 'config', ->
     require '../lib/config'
 
   it 'should ensure config exists', ->
-    expect(atom.config.get('emacs-mode.hideTabs')).toBeDefined()
-    expect(atom.config.get('emacs-mode.hideSidebar')).toBeDefined()
-    expect(atom.config.get('emacs-mode.useEmacsCursor')).toBeDefined()
-    expect(atom.config.get('emacs-mode.useFuzzyFileFinder')).toBeDefined()
-    expect(atom.config.get('emacs-mode.useFuzzyBufferFinder')).toBeDefined()
+    expect(atom.config.get('emacs-hjkl.hideTabs')).toBeDefined()
+    expect(atom.config.get('emacs-hjkl.hideSidebar')).toBeDefined()
+    expect(atom.config.get('emacs-hjkl.useEmacsCursor')).toBeDefined()
+    expect(atom.config.get('emacs-hjkl.useFuzzyFileFinder')).toBeDefined()
+    expect(atom.config.get('emacs-hjkl.useFuzzyBufferFinder')).toBeDefined()
 
   it 'should trigger corresponding events', ->
     expect(hideTabs).toHaveBeenCalled()

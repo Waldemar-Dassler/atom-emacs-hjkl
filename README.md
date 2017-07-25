@@ -2,17 +2,17 @@
 
 This package is no longer under maintain. **Because I realized that there is nothing in this world can replace Emacs. Happy hacking!**
 
-Atom emacs-mode [![Build Status](https://travis-ci.org/fuqcool/atom-emacs-mode.svg?branch=master)](https://travis-ci.org/fuqcool/atom-emacs-mode)
+Atom emacs-HJKL
 ======
 
 This is an Emacs extension for Atom.
 
 ## Install
 
-You can install it from `Atom -> Preferences -> Settings -> Packages`. To enable emacs-mode automatically on Atom starts, put following code to your init script:
+You can install it from `Atom -> Preferences -> Settings -> Packages`. To enable emacs-hjkl automatically on Atom starts, put following code to your init script:
 
 ```coffeescript
-atom.packages.activatePackage 'emacs-mode'
+atom.packages.activatePackage 'emacs-hjkl'
 ```
 
 ## Features
@@ -90,7 +90,7 @@ atom.packages.activatePackage 'emacs-mode'
 Below are the default configurations:
 
 ```coffeescript
-'emacs-mode':
+'emacs-hjkl':
   'hideTabs': false              # hide tabs
   'hideSidebar': false           # hide tree view
   'useEmacsCursor': true         # use emacs style(fat) cursor

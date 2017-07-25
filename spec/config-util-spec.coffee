@@ -2,7 +2,7 @@ configUtil = require '../lib/config-util'
 
 describe 'config util', ->
   watchHandler = null
-  keyPath = 'emacs-mode:foo'
+  keyPath = 'emacs-hjkl:foo'
 
   getConfig = -> atom.config.get keyPath
   setConfig = (value) -> atom.config.set keyPath, value

@@ -2,7 +2,7 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'Emacs Mode'
+      'label': 'Emacs HJKL'
       'submenu': [
         { 'label': 'Toggle', 'command': 'emacs-mode:toggle' }
       ]
