@@ -4,7 +4,7 @@
     'submenu': [
       'label': 'Emacs HJKL'
       'submenu': [
-        { 'label': 'Toggle', 'command': 'emacs-mode:toggle' }
+        { 'label': 'Toggle', 'command': 'emcas-hjkl:toggle' }
       ]
     ]
   }
