@@ -14,11 +14,12 @@ Emacs with hjkl move forward keybindings for Atom.
     'up': 'emacs-hjkl:previous-line'
     'alt-j': 'emacs-hjkl:next-line'
     'down': 'emacs-hjkl:next-line'
+
+    'alt-b': 'emacs-hjkl:backward-word'
+    'alt-left': 'emacs-hjkl:backward-word'
+    'alt-f': 'emacs-hjkl:forward-word'
+    'alt-right': 'emacs-hjkl:forward-word'
     
-    '': 'emacs-hjkl:backward-word'
-    '': 'emacs-hjkl:backward-word'
-    '': 'emacs-hjkl:forward-word'
-    '': 'emacs-hjkl:forward-word'
     '': 'emacs-hjkl:backward-sexp'
     '': 'emacs-hjkl:forward-sexp'
     '': 'emacs-hjkl:backward-paragraph'
