@@ -29,7 +29,7 @@
 
 'atom-workspace atom-text-editor':
   # Navigation
-  'alt-h': 'emacs-hjkl:backward-char'
+  'ctrl-h': 'emacs-hjkl:backward-char'
   'left': 'emacs-hjkl:backward-char'
   'alt-l': 'emacs-hjkl:forward-char'
   'right': 'emacs-hjkl:forward-char'
