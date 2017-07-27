@@ -108,8 +108,8 @@ easier with the [disable-keybindings][disable-keybindings] package.
 
 ## Contributing
 
-* [Bug reports](https://github.com/avendael/emacs-hjkl/issues)
-* [Source](https://github.com/avendael/emacs-hjkl)
+* [Bug reports](https://github.com/Waldemar-Dassler/emacs-hjkl/issues)
+* [Source](https://github.com/Waldemar-Dassler/emacs-hjkl)
 * Patches: Fork on Github, send pull request.
  * Include tests where practical.
  * Leave the version alone, or bump it in a separate commit.

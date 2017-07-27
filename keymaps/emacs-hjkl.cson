@@ -96,9 +96,9 @@
 
 'atom-text-editor:not(.autocomplete-active):not(.mini)':
   # Navigation
-  'ctrl-p': 'emacs-hjkl:previous-line'
+  'alt-k': 'emacs-hjkl:previous-line'
   'up': 'emacs-hjkl:previous-line'
-  'ctrl-n': 'emacs-hjkl:next-line'
+  'alt-j': 'emacs-hjkl:next-line'
   'down': 'emacs-hjkl:next-line'
 
   # Scrolling
