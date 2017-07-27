@@ -31,7 +31,7 @@
   # Navigation
   'alt-h': 'emacs-hjkl:backward-char'
   'left': 'emacs-hjkl:backward-char'
-  'ctrl-f': 'emacs-hjkl:forward-char'
+  'alt-l': 'emacs-hjkl:forward-char'
   'right': 'emacs-hjkl:forward-char'
   'alt-b': 'emacs-hjkl:backward-word'
   'alt-left': 'emacs-hjkl:backward-word'
