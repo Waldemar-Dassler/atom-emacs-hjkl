@@ -70,7 +70,7 @@
   'ctrl-alt-t': 'emacs-hjkl:transpose-sexps'
   'ctrl-x ctrl-t': 'emacs-hjkl:transpose-lines'
   'ctrl-x ctrl-l': 'emacs-hjkl:downcase-word-or-region'
-  'alt-l': 'emacs-hjkl:downcase-word-or-region'
+  'ctrl-q': 'emacs-hjkl:downcase-word-or-region'
   'ctrl-x ctrl-u': 'emacs-hjkl:upcase-word-or-region'
   'alt-u': 'emacs-hjkl:upcase-word-or-region'
   'alt-c': 'emacs-hjkl:capitalize-word-or-region'
