@@ -19,21 +19,24 @@ Emacs with hjkl move forward keybindings for Atom.
     'alt-left': 'emacs-hjkl:backward-word'
     'alt-f': 'emacs-hjkl:forward-word'
     'alt-right': 'emacs-hjkl:forward-word'
-    
-    '': 'emacs-hjkl:backward-sexp'
-    '': 'emacs-hjkl:forward-sexp'
-    '': 'emacs-hjkl:backward-paragraph'
-    '': 'emacs-hjkl:forward-paragraph'
-    '': 'emacs-hjkl:back-to-indentation'
-    '': 'editor:move-to-beginning-of-line'
-    '': 'find-and-replace:show'
-    '': 'find-and-replace:show'
-    '': 'core:move-to-top'
-    '': 'core:move-to-bottom'
+
+    'ctrl-alt-b': 'emacs-hjkl:backward-sexp'
+    'ctrl-alt-f': 'emacs-hjkl:forward-sexp'
+
+    'alt-{': 'emacs-hjkl:backward-paragraph'
+    'alt-}': 'emacs-hjkl:forward-paragraph'
+
+    'alt-m': 'emacs-hjkl:back-to-indentation'
+    'alt-a': 'editor:move-to-beginning-of-line'
+
+    'ctrl-r': 'find-and-replace:show'
+
+    'alt-<': 'core:move-to-top'
+    'alt->': 'core:move-to-bottom'
 
 ### Killing & Yanking
 
-    '': 'emacs-hjkl:backward-kill-word'
+    '': 'emacs-hjkl:'
     '': 'emacs-hjkl:backward-kill-word'
     '': 'emacs-hjkl:kill-word'
     '': 'emacs-hjkl:kill-line'
