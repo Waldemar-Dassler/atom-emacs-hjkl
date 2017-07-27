@@ -11,6 +11,11 @@
   'ctrl-x 1': 'emacs-hjkl:close-other-panes'
   'ctrl-x o': 'window:focus-next-pane'
 
+  'alt-l': 'tree-view:collapse-directory'
+  'alt-h': 'tree-view:expand-item'
+  'alt-k': 'core:move-up'
+  'alt-j': 'core:move-down'
+
 'body.platform-darwin':
   'cmd-x': 'emacs-hjkl:cut'
   'cmd-c': 'emacs-hjkl:copy'
