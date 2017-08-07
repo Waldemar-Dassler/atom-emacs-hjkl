@@ -1,4 +1,5 @@
-'atom-workspace atom-text-editor:not([mini])':
+'.platform-darwin .editor':
   'alt-d': 'unset!'
-'atom-text-editor':
+
+'.platform-darwin .editor:not(.mini)':
   'alt-d': 'emacs-hjkl:kill-word'
