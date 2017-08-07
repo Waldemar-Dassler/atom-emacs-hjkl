@@ -1,2 +1,4 @@
-'atom-text-editor:not([mini])':
-	'alt-d': 'emacs-hjkl:kill-word'
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-d': 'unset!'
+'atom-text-editor':
+  'alt-d': 'emacs-hjkl:kill-word'
