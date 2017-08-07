@@ -16,7 +16,7 @@
   'alt-k': 'core:move-up'
   'alt-j': 'core:move-down'
 
-'atom-text-editor':
+'atom-text-editor:not([mini])':
     'alt-d': 'emacs-hjkl:kill-word'
 
 'body.platform-darwin':
