@@ -24,21 +24,20 @@ Emacs with hjkl move forward keybindings for Atom.
     'alt-shift-}': 'emacs-hjkl:forward-paragraph'
     'alt-m': 'emacs-hjkl:back-to-indentation'
     'alt-a': 'editor:move-to-beginning-of-line'
-    'ctrl-r': 'find-and-replace:show'
     'alt-<': 'core:move-to-top'
     'alt->': 'core:move-to-bottom'
 
 ### Killing & Yanking
 
     'alt-backspace': 'emacs-hjkl:backward-kill-word'
-    'alt-d': 'emacs-hjkl:kill-word'
-    '': 'emacs-hjkl:kill-line'
-    '': 'emacs-hjkl:kill-region'
-    '': 'emacs-hjkl:copy-region-as-kill'
-    '': 'emacs-hjkl:append-next-kill'
-    '': 'emacs-hjkl:yank'
-    '': 'emacs-hjkl:yank-pop'
-    '': 'emacs-hjkl:yank-shift'
+    'alt-d': 'emacs-hjkl:kill-word' [needed fixing]
+    'ctrl-k': 'emacs-hjkl:kill-line'
+    'ctrl-w': 'emacs-hjkl:kill-region'
+    'alt-w': 'emacs-hjkl:copy-region-as-kill'
+    'ctrl-alt-w': 'emacs-hjkl:append-next-kill'
+    'ctrl-y': 'emacs-hjkl:yank'
+    'alt-y': 'emacs-hjkl:yank-pop'
+    'alt-shift-y': 'emacs-hjkl:yank-shift'
 
 Note that Atomic Emacs does not (yet) support prefix arguments, so to rotate the
 kill ring forward, use `yank-shift` (equivalent to `yank-pop` in Emacs with a
@@ -110,8 +109,8 @@ easier with the [disable-keybindings][disable-keybindings] package.
 
 ## Contributing
 
-* [Bug reports](https://github.com/Waldemar-Dassler/emacs-hjkl/issues)
-* [Source](https://github.com/Waldemar-Dassler/emacs-hjkl)
+* [Bug reports](https://github.com/Waldemar-Dassler/atom-emacs-hjkl/issues)
+* [Source](https://github.com/Waldemar-Dassler/atom-emacs-hjkl)
 * Patches: Fork on Github, send pull request.
- * Include tests where practical.
- * Leave the version alone, or bump it in a separate commit.
+* Include tests where practical.
+* Leave the version alone, or bump it in a separate commit.
