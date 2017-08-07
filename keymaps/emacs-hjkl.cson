@@ -1,3 +1,6 @@
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-d': 'editor:delete-to-end-of-word'
+
 'body':
   'ctrl-g': 'core:cancel'
   'alt-x': 'command-palette:toggle'
@@ -16,8 +19,6 @@
   'alt-k': 'core:move-up'
   'alt-j': 'core:move-down'
 
-'atom-text-editor:not([mini])':
-    'alt-d': 'emacs-hjkl:kill-word'
 
 'body.platform-darwin':
   'cmd-x': 'emacs-hjkl:cut'
@@ -54,11 +55,9 @@
   'alt-<': 'core:move-to-top'
   'alt->': 'core:move-to-bottom'
 
-  # fixing
-  '': 'editor:delete-to-end-of-word'
-
   # Killing & Yanking
   'alt-backspace': 'emacs-hjkl:backward-kill-word'
+  'alt-d': 'emacs-hjkl:kill-word'
   'ctrl-k': 'emacs-hjkl:kill-line'
   'ctrl-w': 'emacs-hjkl:kill-region'
   'alt-w': 'emacs-hjkl:copy-region-as-kill'
