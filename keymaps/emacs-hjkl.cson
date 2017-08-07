@@ -1,5 +1,20 @@
+# UNSET DEFAULT KEYMAP
 '.platform-darwin .editor':
   'alt-d': 'unset!'
 
 '.platform-darwin .editor:not(.mini)':
   'alt-d': 'emacs-hjkl:kill-word'
+
+'body':
+    # Tree view
+    'ctrl-h': 'tree-view:collapse-directory'
+    'alt-l': 'tree-view:expand-item'
+    'alt-k': 'core:move-up'
+    'alt-j': 'core:move-down'
+
+    'atom-workspace atom-text-editor':
+        # Navigation
+        'alt-h': 'emacs-hjkl:backward-char'
+        'alt-l': 'emacs-hjkl:forward-char'
+        'alt-b': 'emacs-hjkl:backward-word'
+        'alt-f': 'emacs-hjkl:forward-word'
