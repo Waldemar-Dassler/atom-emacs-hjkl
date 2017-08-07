@@ -1,7 +1,7 @@
 {
   "name": "emacs-hjkl",
   "main": "./lib/emacs-hjkl",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "description": "An atom implementation of emacs keybindings",
   "activationCommands": {
     "atom-text-editor": [
