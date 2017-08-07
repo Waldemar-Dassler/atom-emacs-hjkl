@@ -1,5 +1,5 @@
-'atom-text-editor:not([mini])':
+'atom-text-editor':
   'alt-d': 'editor:delete-to-end-of-word'
 
-'atom-text-editor':
+'atom-text-editor:not([mini])':
 	'alt-d': 'emacs-hjkl:kill-word'
