@@ -1,4 +1,4 @@
-## Atomic Emacs
+## Atom Emacs HJKL
 
 Emacs with hjkl move forward keybindings for Atom.
 
@@ -14,31 +14,24 @@ Emacs with hjkl move forward keybindings for Atom.
     'up': 'emacs-hjkl:previous-line'
     'alt-j': 'emacs-hjkl:next-line'
     'down': 'emacs-hjkl:next-line'
-
     'alt-b': 'emacs-hjkl:backward-word'
     'alt-left': 'emacs-hjkl:backward-word'
     'alt-f': 'emacs-hjkl:forward-word'
     'alt-right': 'emacs-hjkl:forward-word'
-
     'ctrl-alt-b': 'emacs-hjkl:backward-sexp'
     'ctrl-alt-f': 'emacs-hjkl:forward-sexp'
-
-    'alt-{': 'emacs-hjkl:backward-paragraph'
-    'alt-}': 'emacs-hjkl:forward-paragraph'
-
+    'alt-shift-{': 'emacs-hjkl:backward-paragraph'
+    'alt-shift-}': 'emacs-hjkl:forward-paragraph'
     'alt-m': 'emacs-hjkl:back-to-indentation'
     'alt-a': 'editor:move-to-beginning-of-line'
-
     'ctrl-r': 'find-and-replace:show'
-
     'alt-<': 'core:move-to-top'
     'alt->': 'core:move-to-bottom'
 
 ### Killing & Yanking
 
-    '': 'emacs-hjkl:'
-    '': 'emacs-hjkl:backward-kill-word'
-    '': 'emacs-hjkl:kill-word'
+    'alt-backspace': 'emacs-hjkl:backward-kill-word'
+    'alt-d': 'emacs-hjkl:kill-word'
     '': 'emacs-hjkl:kill-line'
     '': 'emacs-hjkl:kill-region'
     '': 'emacs-hjkl:copy-region-as-kill'

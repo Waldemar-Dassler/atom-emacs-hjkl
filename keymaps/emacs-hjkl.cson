@@ -11,7 +11,7 @@
   'ctrl-x 1': 'emacs-hjkl:close-other-panes'
   'ctrl-x o': 'window:focus-next-pane'
 
-  'alt-h': 'tree-view:collapse-directory'
+  'ctrl-h': 'tree-view:collapse-directory'
   'alt-l': 'tree-view:expand-item'
   'alt-k': 'core:move-up'
   'alt-j': 'core:move-down'
@@ -34,7 +34,7 @@
 
 'atom-workspace atom-text-editor':
   # Navigation
-  'ctrl-h': 'emacs-hjkl:backward-char'
+  'alt-h': 'emacs-hjkl:backward-char'
   'left': 'emacs-hjkl:backward-char'
   'alt-l': 'emacs-hjkl:forward-char'
   'right': 'emacs-hjkl:forward-char'
@@ -54,7 +54,6 @@
 
   # Killing & Yanking
   'alt-backspace': 'emacs-hjkl:backward-kill-word'
-  'alt-delete': 'emacs-hjkl:backward-kill-word'
   'alt-d': 'emacs-hjkl:kill-word'
   'ctrl-k': 'emacs-hjkl:kill-line'
   'ctrl-w': 'emacs-hjkl:kill-region'
