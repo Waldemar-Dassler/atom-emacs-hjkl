@@ -8,7 +8,7 @@
 
 'body':
     # Fixing tree view
-    'ctrl-h': 'tree-view:collapse-directory'
+    'alt-h': 'tree-view:collapse-directory'
     'alt-l': 'tree-view:expand-item'
     'alt-k': 'core:move-up'
     'alt-j': 'core:move-down'
@@ -18,7 +18,9 @@
     'ctrl-<': 'pane:split-down'
     'ctrl-p': 'pane:close'
     'ctrl-o': 'emacs-hjkl:close-other-panes'
-    'ctrl-n': 'window:focus-next-pane'
+    'ctrl-l': 'window:focus-next-pane'
+    'ctrl-h': 'window:focus-pane-on-right'
+
 
     'atom-workspace atom-text-editor':
         # Navigation
