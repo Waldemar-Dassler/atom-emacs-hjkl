@@ -1,63 +1,48 @@
+# UNSET DEFAULT KEYMAP
+'.platform-darwin .editor':
+    'alt-d': 'unset!'
+
+# FIXING DEFAULT KEYMAP
+'.platform-darwin .editor:not(.mini)':
+    'alt-d': 'emacs-hjkl:kill-word'
+
 'body':
+    'ctrl->': 'pane:split-right'
+    'ctrl-<': 'pane:split-down'
+    'ctrl-p': 'pane:close'
+    'ctrl-o': 'emacs-hjkl:close-other-panes'
+    'ctrl-l': 'window:focus-next-pane'
+    'ctrl-h': 'window:focus-previous-pane'
 
-    'ctrl-g': 'core:cancel'
-    'alt-x': 'command-palette:toggle'
-    'ctrl-x ctrl-c': 'application:quit'
-    'ctrl-x k': 'core:close'
-    'ctrl-x ctrl-f': 'fuzzy-finder:toggle-file-finder'
-    'ctrl-x b': 'fuzzy-finder:toggle-buffer-finder'
-    'ctrl-x 3': 'pane:split-right'
-    'ctrl-x 2': 'pane:split-down'
-    'ctrl-x 0': 'pane:close'
-    'ctrl-x 1': 'emacs-hjkl:close-other-panes'
-    'ctrl-x o': 'window:focus-next-pane'
-
-    'ctrl-h': 'tree-view:collapse-directory'
+    'alt-h': 'tree-view:collapse-directory'
     'alt-l': 'tree-view:expand-item'
     'alt-k': 'core:move-up'
     'alt-j': 'core:move-down'
-
-    # UNSET DEFAULT KEYMAP
-    '.platform-darwin .editor':
-        'alt-d': 'unset!'
-
-    # FIXING DEFAULT KEYMAP
-    '.platform-darwin .editor:not(.mini)':
-        'alt-d': 'emacs-hjkl:kill-word'
-
 
 'body.platform-darwin':
   'cmd-x': 'emacs-hjkl:cut'
   'cmd-c': 'emacs-hjkl:copy'
 
 'body.platform-linux':
-  'shift-delete': 'emacs-hjkl:cut'
-  'ctrl-insert': 'emacs-hjkl:copy'
   'ctrl-x': 'emacs-hjkl:cut'
   'ctrl-c': 'emacs-hjkl:copy'
 
 'body.platform-win32':
-  'shift-delete': 'emacs-hjkl:cut'
-  'ctrl-insert': 'emacs-hjkl:copy'
   'ctrl-x': 'emacs-hjkl:cut'
   'ctrl-c': 'emacs-hjkl:copy'
 
 'atom-workspace atom-text-editor':
   # Navigation
   'alt-h': 'emacs-hjkl:backward-char'
-  'left': 'emacs-hjkl:backward-char'
   'alt-l': 'emacs-hjkl:forward-char'
-  'right': 'emacs-hjkl:forward-char'
   'alt-b': 'emacs-hjkl:backward-word'
-  'alt-left': 'emacs-hjkl:backward-word'
   'alt-f': 'emacs-hjkl:forward-word'
-  'alt-right': 'emacs-hjkl:forward-word'
   'ctrl-alt-b': 'emacs-hjkl:backward-sexp'
   'ctrl-alt-f': 'emacs-hjkl:forward-sexp'
   'alt-{': 'emacs-hjkl:backward-paragraph'
   'alt-}': 'emacs-hjkl:forward-paragraph'
-  'alt-m': 'emacs-hjkl:back-to-indentation'
   'alt-a': 'editor:move-to-beginning-of-line'
+  'alt-m': 'emacs-hjkl:back-to-indentation'
   'alt-<': 'core:move-to-top'
   'alt->': 'core:move-to-bottom'
 

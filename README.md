@@ -6,31 +6,35 @@ Emacs with hjkl move forward keybindings for Atom.
 
 ### Navigation
 
-    '': 'emacs-hjkl:backward-char'
-    '': 'emacs-hjkl:backward-char'
-    '': 'emacs-hjkl:forward-char'
-    '': 'emacs-hjkl:forward-char'
-    '': 'emacs-hjkl:previous-line'
-    '': 'emacs-hjkl:previous-line'
-    '': 'emacs-hjkl:next-line'
-    '': 'emacs-hjkl:next-line'
-    '': 'emacs-hjkl:backward-word'
-    '': 'emacs-hjkl:backward-word'
-    '': 'emacs-hjkl:forward-word'
-    '': 'emacs-hjkl:forward-word'
-    '': 'emacs-hjkl:backward-sexp'
-    '': 'emacs-hjkl:forward-sexp'
-    '': 'emacs-hjkl:backward-paragraph'
-    '': 'emacs-hjkl:forward-paragraph'
-    '': 'emacs-hjkl:back-to-indentation'
-    '': 'editor:move-to-beginning-of-line'
-    '': 'core:move-to-top'
-    '': 'core:move-to-bottom'
+    'alt-h': 'emacs-hjkl:backward-char'
+    'alt-l': 'emacs-hjkl:forward-char'
+    'alt-k': 'emacs-hjkl:previous-line'
+    'alt-j': 'emacs-hjkl:next-line'
+    'alt-b': 'emacs-hjkl:backward-word'
+    'alt-f': 'emacs-hjkl:forward-word'
+    'ctrl-alt-b': 'emacs-hjkl:backward-sexp'
+    'ctrl-alt-f': 'emacs-hjkl:forward-sexp'
+    'alt-[': 'emacs-hjkl:backward-paragraph'
+    'alt-]': 'emacs-hjkl:forward-paragraph'
+    'alt-m': 'emacs-hjkl:back-to-indentation'
+    'alt-a': 'editor:move-to-beginning-of-line'
+    'alt-<': 'core:move-to-top'
+    'alt->': 'core:move-to-bottom'
+
+### Panes
+
+    'ctrl->': 'pane:split-right'
+    'ctrl-<': 'pane:split-down'
+    'ctrl-p': 'pane:close'
+    'ctrl-o': 'emacs-hjkl:close-other-panes'
+    'ctrl-l': 'window:focus-next-pane'
+    'ctrl-h': 'window:focus-previous-pane'
+
 
 ### Killing & Yanking
 
-    '': 'emacs-hjkl:backward-kill-word'
-    '': 'emacs-hjkl:kill-word' [needed fixing]
+    'alt-backspace': 'emacs-hjkl:backward-kill-word'
+    'alt-d': 'emacs-hjkl:kill-word'
     '': 'emacs-hjkl:kill-line'
     '': 'emacs-hjkl:kill-region'
     '': 'emacs-hjkl:copy-region-as-kill'
