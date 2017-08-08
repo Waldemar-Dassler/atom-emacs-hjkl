@@ -49,7 +49,7 @@
   # Killing & Yanking
   'alt-backspace': 'emacs-hjkl:backward-kill-word'
   'alt-d': 'emacs-hjkl:kill-word'
-  'ctrl-k': 'emacs-hjkl:kill-line'
+  'ctrl-i': 'emacs-hjkl:kill-line'
   'ctrl-w': 'emacs-hjkl:kill-region'
   'alt-w': 'emacs-hjkl:copy-region-as-kill'
   'ctrl-alt-w': 'emacs-hjkl:append-next-kill'
@@ -71,7 +71,7 @@
   'ctrl-x ctrl-u': 'emacs-hjkl:upcase-word-or-region'
   'alt-u': 'emacs-hjkl:upcase-word-or-region'
   'alt-c': 'emacs-hjkl:capitalize-word-or-region'
-  'ctrl-j': 'editor:newline'
+  'ctrl-j': 'editor:newline-below'
   'ctrl-/': 'core:undo'
   'ctrl-_': 'core:undo'
   'ctrl-x u': 'core:undo'
@@ -105,11 +105,12 @@
 
 '.platform-linux atom-workspace.emacs-hjkl atom-text-editor':
   'ctrl-d': 'core:delete'
+
   'ctrl-e': 'editor:move-to-end-of-screen-line'
 
 '.platform-linux atom-workspace atom-text-editor:not([mini]),
  .platform-win32 atom-workspace atom-text-editor:not([mini])':
-  'ctrl-j': 'editor:newline'
+  'ctrl-j': 'editor:newline-below'
 
 '.platform-linux atom-workspace atom-text-editor:not(.autocomplete-active):not([mini]),
  .platform-win32 atom-workspace atom-text-editor:not(.autocomplete-active):not([mini])':

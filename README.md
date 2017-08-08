@@ -35,7 +35,7 @@ Emacs with hjkl move forward keybindings for Atom.
 
     'alt-backspace': 'emacs-hjkl:backward-kill-word'
     'alt-d': 'emacs-hjkl:kill-word'
-    '': 'emacs-hjkl:kill-line'
+    'ctrl-i': 'emacs-hjkl:kill-line'
     '': 'emacs-hjkl:kill-region'
     '': 'emacs-hjkl:copy-region-as-kill'
     '': 'emacs-hjkl:append-next-kill'
@@ -61,7 +61,7 @@ prefix argument of -1).
     '': 'emacs-hjkl:upcase-word-or-region'
     '': 'emacs-hjkl:upcase-word-or-region'
     '': 'emacs-hjkl:capitalize-word-or-region'
-    '': 'editor:newline'
+    'ctrl-j': 'editor:newline'
     '': 'core:undo'
     '': 'core:undo'
     '': 'autocomplete-plus:activate'
