@@ -3,7 +3,7 @@
 Emacs with hjkl move forward keybindings for Atom.
 
 ## Commands
-
+```
 ### Navigation
 
     'alt-h': 'emacs-hjkl:backward-char'
@@ -30,66 +30,63 @@ Emacs with hjkl move forward keybindings for Atom.
     'ctrl-l': 'window:focus-next-pane'
     'ctrl-h': 'window:focus-previous-pane'
 
+#### Scrolling
+    'ctrl-l': 'emacs-hjkl:recenter-top-bottom'
+    'ctrl-v': 'emacs-hjkl:scroll-up'
+    'alt-v': 'emacs-hjkl:scroll-down'
+
 
 ### Killing & Yanking
 
     'alt-backspace': 'emacs-hjkl:backward-kill-word'
     'alt-d': 'emacs-hjkl:kill-word'
     'ctrl-i': 'emacs-hjkl:kill-line'
-    '': 'emacs-hjkl:kill-region'
+    'ctrl-w': 'emacs-hjkl:kill-region'
     '': 'emacs-hjkl:copy-region-as-kill'
     '': 'emacs-hjkl:append-next-kill'
     '': 'emacs-hjkl:yank'
     '': 'emacs-hjkl:yank-pop'
     '': 'emacs-hjkl:yank-shift'
 
-Note that Atomic Emacs does not (yet) support prefix arguments, so to rotate the
+Note Emacs HJKL does not (yet) support prefix arguments, so to rotate the
 kill ring forward, use `yank-shift` (equivalent to `yank-pop` in Emacs with a
 prefix argument of -1).
 
 ### Editing
 
-    '': 'emacs-hjkl:delete-horizontal-space'
-    '': 'emacs-hjkl:delete-indentation'
-    '': 'emacs-hjkl:open-line'
-    '': 'emacs-hjkl:just-one-space'
-    '': 'emacs-hjkl:transpose-chars'
-    '': 'emacs-hjkl:transpose-words'
-    '': 'emacs-hjkl:transpose-lines'
-    '': 'emacs-hjkl:downcase-word-or-region'
-    '': 'emacs-hjkl:downcase-word-or-region'
-    '': 'emacs-hjkl:upcase-word-or-region'
-    '': 'emacs-hjkl:upcase-word-or-region'
-    '': 'emacs-hjkl:capitalize-word-or-region'
-    'ctrl-j': 'editor:newline'
-    '': 'core:undo'
-    '': 'core:undo'
-    '': 'autocomplete-plus:activate'
-    '': 'autoflow:reflow-selection'
-    '': 'editor:toggle-line-comments'
+    'alt-\\': 'emacs-hjkl:delete-horizontal-space'
+    'alt-^': 'emacs-hjkl:delete-indentation'
+    'ctrl-o': 'emacs-hjkl:open-line'
+    'alt-space': 'emacs-hjkl:just-one-space'
+    'ctrl-t': 'emacs-hjkl:transpose-chars'
+    'alt-t': 'emacs-hjkl:transpose-words'
+    'ctrl-alt-t': 'emacs-hjkl:transpose-sexps'
+    'ctrl-x ctrl-t': 'emacs-hjkl:transpose-lines'
+    'ctrl-x ctrl-l': 'emacs-hjkl:downcase-word-or-region'
+    'ctrl-q': 'emacs-hjkl:downcase-word-or-region'
+    'ctrl-x ctrl-u': 'emacs-hjkl:upcase-word-or-region'
+    'alt-u': 'emacs-hjkl:upcase-word-or-region'
+    'alt-c': 'emacs-hjkl:capitalize-word-or-region'
+    'ctrl-j': 'editor:newline-below'
+    'ctrl-/': 'core:undo'
+    'ctrl-x u': 'core:undo'
+    'alt-/': 'autocomplete-plus:activate'
+    'alt-q': 'autoflow:reflow-selection'
+    'alt-;': 'editor:toggle-line-comments'
 
 ### Marking & Selecting
 
-    '': 'emacs-hjkl:set-mark'
-    '': 'emacs-hjkl:mark-sexp'
-    '': 'emacs-hjkl:mark-whole-buffer'
-    '': 'emacs-hjkl:exchange-point-and-mark'
+    'alt-shift-s': 'emacs-hjkl:set-mark'
+    'ctrl-shift-s': 'emacs-hjkl:mark-sexp'
+    'ctrl-x h': 'emacs-hjkl:mark-whole-buffer'
+    'ctrl-x ctrl-x': 'emacs-hjkl:exchange-point-and-mark'
 
 ### UI
 
-    '': 'core:cancel'
-    '': 'core:save'
-    '': 'core:save-as'
-    '': 'command-palette:toggle'
-    '': 'symbols-view:toggle-file-symbols'
-    '': 'fuzzy-finder:toggle-file-finder'
-    '': 'fuzzy-finder:toggle-buffer-finder'
-    '': 'core:close'
-    '': 'pane:close'
-    '': 'emacs-hjkl:close-other-panes'
-    '': 'pane:split-down'
-    '': 'pane:split-right'
-    '': 'window:focus-next-pane'
+    'ctrl-g': 'core:cancel'
+    'ctrl-x ctrl-s': 'core:save'
+    'ctrl-x ctrl-w': 'core:save-as'
+    'alt-.': 'symbols-view:toggle-file-symbols'
 
 ### Something missing?
 
@@ -98,7 +95,7 @@ pull request!
 
 ## Windows Note
 
-Some common Emacs keystrokes conflict with the default key bindings on Atom for
+Some common Emacs HJKL keystrokes conflict with the default key bindings on Atom for
 Windows in unexpected ways. For example, `ctrl-k` (kill-line on emacs) is a
 prefix key for a set of pane management commands in Atom for Windows. The result
 is that after pressing `ctrl-k`, Atom will wait for 2 seconds to determine if it

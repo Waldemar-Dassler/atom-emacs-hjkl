@@ -1,17 +1,22 @@
 # UNSET DEFAULT KEYMAP
 '.platform-darwin .editor':
     'alt-d': 'unset!'
+    'ctrl-o': 'unset!'
+    'ctrl-l': 'unset!'
+    'ctrl-w': 'unset!'
 
 # FIXING DEFAULT KEYMAP
 '.platform-darwin .editor:not(.mini)':
     'alt-d': 'emacs-hjkl:kill-word'
+    'ctrl-o': 'emacs-hjkl:close-other-panes'
+    'ctrl-l': 'window:focus-next-pane'
+    'ctrl-w': 'emacs-hjkl:kill-region'
+
 
 'body':
     'ctrl->': 'pane:split-right'
     'ctrl-<': 'pane:split-down'
     'ctrl-p': 'pane:close'
-    'ctrl-o': 'emacs-hjkl:close-other-panes'
-    'ctrl-l': 'window:focus-next-pane'
     'ctrl-h': 'window:focus-previous-pane'
 
     'alt-h': 'tree-view:collapse-directory'
@@ -50,7 +55,6 @@
   'alt-backspace': 'emacs-hjkl:backward-kill-word'
   'alt-d': 'emacs-hjkl:kill-word'
   'ctrl-i': 'emacs-hjkl:kill-line'
-  'ctrl-w': 'emacs-hjkl:kill-region'
   'alt-w': 'emacs-hjkl:copy-region-as-kill'
   'ctrl-alt-w': 'emacs-hjkl:append-next-kill'
   'ctrl-y': 'emacs-hjkl:yank'
@@ -80,8 +84,8 @@
   'alt-;': 'editor:toggle-line-comments'
 
   # Marking & Selecting
-  'ctrl-space': 'emacs-hjkl:set-mark'
-  'ctrl-alt-space': 'emacs-hjkl:mark-sexp'
+  'alt-shift-s': 'emacs-hjkl:set-mark'
+  'ctrl-shift-s': 'emacs-hjkl:mark-sexp'
   'ctrl-x h': 'emacs-hjkl:mark-whole-buffer'
   'ctrl-x ctrl-x': 'emacs-hjkl:exchange-point-and-mark'
 
